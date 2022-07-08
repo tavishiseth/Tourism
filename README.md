@@ -13,8 +13,7 @@ It provides an user interface for the administrator for managing the data presen
 ## Relational Schema
 ![image](https://user-images.githubusercontent.com/75008683/177980603-60c6845a-802c-4f3c-b487-bc85354f6a55.png)
 
-## CREATE TABLE QUERIES
-
+## CREATING TABLE QUERIES
 1. Creating Table Booked_for:  
 ![image](https://user-images.githubusercontent.com/75008683/177981747-73fa34a3-9555-4886-b1c8-07a5872d44c2.png)
 
@@ -43,7 +42,6 @@ It provides an user interface for the administrator for managing the data presen
 ![image](https://user-images.githubusercontent.com/75008683/177981921-23d1fefc-b85b-4fca-a9c8-a54c64bcc17d.png)
 
 ## CREATING CONSTRAINTS:
-
 Constraints in Booked_for table:  
 ![image](https://user-images.githubusercontent.com/75008683/177982069-c8b74dd6-32b5-46fa-9d96-c0ef34cb0d77.png)
 
