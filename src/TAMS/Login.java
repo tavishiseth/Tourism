@@ -182,7 +182,7 @@ public class Login extends javax.swing.JFrame {
             rs = pst.executeQuery();
 
             if (rs.next()) {
-                JOptionPane.showMessageDialog(null, "Login Succesfull");
+                JOptionPane.showMessageDialog(null, "Login Succesful");
                 Home Hobj = new Home();
                 Hobj.setVisible(true);
                 dispose();

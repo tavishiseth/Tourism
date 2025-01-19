@@ -1,0 +1,103 @@
+INSERT INTO `login` (`username`, `password`) VALUES ('admin', 'admin');
+
+INSERT INTO `testdb`.`employee` (`eid`, `ename`, `ephone`, `eaddress`, `ejdate`) VALUES ('22', 'Christina', '96555083575557703665', 'm266', '2024');
+
+INSERT INTO `testdb`.`employee` (`eid`, `ename`, `ephone`, `eaddress`, `ejdate`) VALUES ('24', 'Brandon', '7555673090', 'm261', '2024-02-02');
+
+INSERT INTO `testdb`.`employee` (`eid`, `ename`, `ephone`, `eaddress`, `ejdate`) VALUES ('26', 'Jack', '9655554199', 'm255', '2024-03-04');
+
+INSERT INTO `testdb`.`employee` (`eid`, `ename`, `ephone`, `eaddress`, `ejdate`) VALUES ('37', 'Kenneth', '9455588277', 'h567', '2024-12-27');
+
+INSERT INTO `testdb`.`employee` (`eid`, `ename`, `ephone`, `eaddress`, `ejdate`) VALUES ('45', 'James', '2029182132', 's890', '2024-01-01');
+
+INSERT INTO `testdb`.`employee` (`eid`, `ename`, `ephone`, `eaddress`, `ejdate`) VALUES ('82', 'Mike', '2029182135', 'j123', '2024-01-25');
+
+INSERT INTO `testdb`.`employee` (`eid`, `ename`, `ephone`, `eaddress`, `ejdate`) VALUES ('11', 'Shannon', '7555045129', 'a234', '2024-01-16');
+
+INSERT INTO `testdb`.`employee` (`eid`, `ename`, `ephone`, `eaddress`, `ejdate`) VALUES ('17', 'Brittany', '1555302988', 'c254', '2024-09-22');
+
+INSERT INTO `testdb`.`employee` (`eid`, `ename`, `ephone`, `eaddress`, `ejdate`) VALUES ('15', 'Dawn', '8555801440', 'a254', '2024-05-18');
+
+INSERT INTO `testdb`.`employee` (`eid`, `ename`, `ephone`, `eaddress`, `ejdate`) VALUES ('36', 'Katherine', '9455599130', '9253', '2024-09-28');
+
+INSERT INTO `testdb`.`customer` (`cid`, `cname`, `caddress`, `cphone`) VALUES ('101', 'raghav', '123,abc', '9908740851');
+
+INSERT INTO `testdb`.`customer` (`cid`, `cname`, `caddress`, `cphone`) VALUES ('102', 'Joey', '213,bcd', '9908740311');
+
+INSERT INTO `testdb`.`customer` (`cid`, `cname`, `caddress`, `cphone`) VALUES ('103', 'Chandler', '214,fgh', '9928560321');
+
+INSERT INTO `testdb`.`customer` (`cid`, `cname`, `caddress`, `cphone`) VALUES ('104', 'Ross', '215,klm', '9441429424');
+
+INSERT INTO `testdb`.`customer` (`cid`, `cname`, `caddress`, `cphone`) VALUES ('105', 'Phoebe', '314,dsa', '9885645367');
+
+INSERT INTO `testdb`.`customer` (`cid`, `cname`, `caddress`, `cphone`) VALUES ('106', 'Rachel', '516,abc', '8498469900');
+
+INSERT INTO `testdb`.`customer` (`cid`, `cname`, `caddress`, `cphone`) VALUES ('107', 'Monica', '517,dpk', '1234567890');
+
+INSERT INTO `testdb`.`customer` (`cid`, `cname`, `caddress`, `cphone`) VALUES ('108', 'Emma', '768,fgh', '9988776655');
+
+INSERT INTO `testdb`.`customer` (`cid`, `cname`, `caddress`, `cphone`) VALUES ('109', 'Richard', '897,bhv', '6677889900');
+
+INSERT INTO `testdb`.`customer` (`cid`, `cname`, `caddress`, `cphone`) VALUES ('110', 'Geller', '865,vfd', '9394061050');
+
+INSERT INTO `testdb`.`trip` (`tid`, `source`, `dest`, `sdate`, `edate`) VALUES ('1001', 'Hyd', 'mum', '2025-02-04', '2025-02-07');
+
+INSERT INTO `testdb`.`trip` (`tid`, `source`, `dest`, `sdate`, `edate`) VALUES ('1002', 'Blr', 'koc', '2025-02-05', '2025-02-11');
+
+INSERT INTO `testdb`.`trip` (`tid`, `source`, `dest`, `sdate`, `edate`) VALUES ('1003', 'koc', 'mum', '2025-02-05', '2025-02-08');
+
+INSERT INTO `testdb`.`trip` (`tid`, `source`, `dest`, `sdate`, `edate`) VALUES ('1004', 'hyd', 'blr', '2025-02-06', '2025-02-10');
+
+INSERT INTO `testdb`.`trip` (`tid`, `source`, `dest`, `sdate`, `edate`) VALUES ('1005', 'chn', 'blr', '2025-02-09', '2025-02-14');
+
+INSERT INTO `testdb`.`trip` (`tid`, `source`, `dest`, `sdate`, `edate`) VALUES ('1006', 'del', 'chn', '2025-02-11', '2025-02-17');
+
+INSERT INTO `testdb`.`trip` (`tid`, `source`, `dest`, `sdate`, `edate`) VALUES ('1007', 'mum', 'chn', '2025-02-12', '2025-02-19');
+
+INSERT INTO `testdb`.`trip` (`tid`, `source`, `dest`, `sdate`, `edate`) VALUES ('1008', 'koc', 'del', '2025-02-15', '2025-02-19');
+
+INSERT INTO `testdb`.`trip` (`tid`, `source`, `dest`, `sdate`, `edate`) VALUES ('1009', 'kol', 'hyd', '2025-01-16', '2025-02-18');
+
+INSERT INTO `testdb`.`trip` (`tid`, `source`, `dest`, `sdate`, `edate`) VALUES ('1010', 'hyd', 'kol', '2025-02-17', '2025-02-25');
+
+INSERT INTO `testdb`.`vehicle` (`vid`, `vname`, `cap`, `vtype`, `regno`) VALUES ('1', 'mahindra-car', '4', 'Car', '211');
+
+INSERT INTO `testdb`.`vehicle` (`vid`, `vname`, `cap`, `vtype`, `regno`) VALUES ('2', 'hero-bike', '2', 'Bike', '212');
+
+INSERT INTO `testdb`.`vehicle` (`vid`, `vname`, `cap`, `vtype`, `regno`) VALUES ('3', 'BMW-E-class', '4', 'Car', '213');
+
+INSERT INTO `testdb`.`vehicle` (`vid`, `vname`, `cap`, `vtype`, `regno`) VALUES ('4', 'rangerover', '6', 'SUV', '214');
+
+INSERT INTO `testdb`.`vehicle` (`vid`, `vname`, `cap`, `vtype`, `regno`) VALUES ('5', 'alto-car', '4', 'Car', '215');
+
+INSERT INTO `testdb`.`vehicle` (`vid`, `vname`, `cap`, `vtype`, `regno`) VALUES ('6', 'swift-car', '4', 'Car', '216');
+
+INSERT INTO `testdb`.`vehicle` (`vid`, `vname`, `cap`, `vtype`, `regno`) VALUES ('7', 'verna-car', '4', 'Car', '217');
+
+INSERT INTO `testdb`.`vehicle` (`vid`, `vname`, `cap`, `vtype`, `regno`) VALUES ('8', 'wolkswagen', '4', 'Car', '218');
+
+INSERT INTO `testdb`.`vehicle` (`vid`, `vname`, `cap`, `vtype`, `regno`) VALUES ('9', 'mahindra-bus', '15', 'Bus', '219');
+
+INSERT INTO `testdb`.`vehicle` (`vid`, `vname`, `cap`, `vtype`, `regno`) VALUES ('10', 'BMW-SUV', '6', 'SUV', '220');
+
+DELETE FROM `testdb`.`booked_for` WHERE (`VID` = '10') AND (`TID` = '1010') AND (`CID` = '110');
+
+INSERT INTO `testdb`.`booked_for` (`VID`, `CID`, `TID`, `BDATE`) VALUES ('1', '101', '1001', '2025-01-04');
+
+INSERT INTO `testdb`.`booked_for` (`VID`, `CID`, `TID`, `BDATE`) VALUES ('2', '102', '1002', '2025-01-05');
+
+INSERT INTO `testdb`.`booked_for` (`VID`, `CID`, `TID`, `BDATE`) VALUES ('3', '103', '1003', '2025-01-05');
+
+INSERT INTO `testdb`.`booked_for` (`VID`, `CID`, `TID`, `BDATE`) VALUES ('4', '104', '1004', '2025-01-06');
+
+INSERT INTO `testdb`.`booked_for` (`VID`, `CID`, `TID`, `BDATE`) VALUES ('5', '105', '1005', '2025-01-09');
+
+INSERT INTO `testdb`.`booked_for` (`VID`, `CID`, `TID`, `BDATE`) VALUES ('6', '106', '1006', '2025-01-11');
+
+INSERT INTO `testdb`.`booked_for` (`VID`, `CID`, `TID`, `BDATE`) VALUES ('7', '107', '1007', '2025-01-12');
+
+INSERT INTO `testdb`.`booked_for` (`VID`, `CID`, `TID`, `BDATE`) VALUES ('8', '108', '1008', '2025-01-15');
+
+INSERT INTO `testdb`.`booked_for` (`VID`, `CID`, `TID`, `BDATE`) VALUES ('9', '109', '1009', '2025-01-16');
+
+INSERT INTO `testdb`.`booked_for` (`VID`, `CID`, `TID`, `BDATE`) VALUES ('10', '110', '1010', '2025-01-17');

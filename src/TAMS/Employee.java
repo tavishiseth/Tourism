@@ -457,15 +457,6 @@ public class Employee extends javax.swing.JFrame {
         Ephone.setText(model.getValueAt(selectedRowIndex, 2).toString());
         Eaddress.setText(model.getValueAt(selectedRowIndex, 3).toString());
         Ejdate.setText(model.getValueAt(selectedRowIndex, 4).toString());
-        java.util.Date date1;
-
-        try {
-            date1 = new SimpleDateFormat("yyyy-MM-dd").parse(model.getValueAt(selectedRowIndex, 4).toString());
-            Ejdate.setText(date1);
-
-        } catch (ParseException ex) {
-            Logger.getLogger(Book_Trip.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }// GEN-LAST:event_EtableMouseClicked
 
     /**
