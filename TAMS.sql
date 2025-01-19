@@ -32,7 +32,7 @@ CREATE TABLE `booked_for` (
   KEY `cfk_cid1_idx` (`CID`),
   CONSTRAINT `cfk_cid1` FOREIGN KEY (`CID`) REFERENCES `customer` (`cid`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `cfk_tid1` FOREIGN KEY (`TID`) REFERENCES `trip` (`tid`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  CONSTRAINT `cfk_vid1` FOREIGN KEY (`VID`) REFERENCES `vechicle` (`vid`) ON DELETE CASCADE ON UPDATE RESTRICT
+  CONSTRAINT `cfk_vid1` FOREIGN KEY (`VID`) REFERENCES `vehicle` (`vid`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -69,7 +69,7 @@ CREATE TABLE `driven_by` (
   KEY `cfk_tid2_idx` (`TID`),
   CONSTRAINT `cfk_eid1` FOREIGN KEY (`EID`) REFERENCES `employee` (`eid`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `cfk_tid2` FOREIGN KEY (`TID`) REFERENCES `trip` (`tid`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `cfk_vid2` FOREIGN KEY (`VID`) REFERENCES `vechicle` (`vid`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `cfk_vid2` FOREIGN KEY (`VID`) REFERENCES `vehicle` (`vid`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -88,7 +88,7 @@ CREATE TABLE `employee` (
   `eJdate` date NOT NULL,
   PRIMARY KEY (`eid`),
   UNIQUE KEY `eid_UNIQUE` (`eid`),
-  CONSTRAINT `du_che_con` CHECK (((`ejdate` >= _utf8mb4'1990-01-01') and (`ejdate` <= _utf8mb4'2019-12-25')))
+  CONSTRAINT `du_che_con` CHECK (`ejdate` >= _utf8mb4'1990-01-01')
 ) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -161,13 +161,13 @@ CREATE TABLE `trip` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 -
--- Table structure for table `vechicle`
+-- Table structure for table `vehicle`
 --
 
-DROP TABLE IF EXISTS `vechicle`;
+DROP TABLE IF EXISTS `vehicle`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `vechicle` (
+CREATE TABLE `vehicle` (
   `vid` int(11) NOT NULL AUTO_INCREMENT,
   `vname` varchar(50) DEFAULT NULL,
   `cap` varchar(11) DEFAULT NULL,
