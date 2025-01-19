@@ -15,35 +15,7 @@ It provides an user interface for the administrator for managing the data presen
 ## Relational Schema
 ![image](https://user-images.githubusercontent.com/75008683/177980603-60c6845a-802c-4f3c-b487-bc85354f6a55.png)
 
-## CREATING TABLE QUERIES
-1. Creating Table Booked_for:  
-![image](https://user-images.githubusercontent.com/75008683/177981747-73fa34a3-9555-4886-b1c8-07a5872d44c2.png)
-
-
-2. Creating Table Customer:  
-![image](https://user-images.githubusercontent.com/75008683/177981775-ff64316b-a3bd-4c41-8d0a-89b67d880b8b.png)
-
-
-3. Creating Table Driven_By:  
-![image](https://user-images.githubusercontent.com/75008683/177981803-5bfac38f-6aae-4c52-a8be-5ef14c7a5068.png)
-
-
-4. Creating Table Payment:  
-![image](https://user-images.githubusercontent.com/75008683/177981840-0dd6d013-80e1-446c-9891-f5c1ad322549.png)
-
-
-5. Creating Table Places:  
-![image](https://user-images.githubusercontent.com/75008683/177981863-d66e8a93-d2a3-4fdf-80ea-fb8c98bf7b06.png)
-
-
-6. Creating Table Employee:  
-![image](https://user-images.githubusercontent.com/75008683/177981897-6334af9b-a38a-4acf-ab40-9a40e7b6687d.png)
-
-
-7. Creating Table Trip:  
-![image](https://user-images.githubusercontent.com/75008683/177981921-23d1fefc-b85b-4fca-a9c8-a54c64bcc17d.png)
-
-## CREATING CONSTRAINTS:
+## CREATING TABLE QUERIES & CONSTRAINTS:
 Constraints in booked_for table:  
 ```
 CREATE TABLE `booked_for` (
@@ -58,6 +30,20 @@ CREATE TABLE `booked_for` (
   CONSTRAINT `cfk_tid1` FOREIGN KEY (`TID`) REFERENCES `trip` (`tid`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `cfk_vid1` FOREIGN KEY (`VID`) REFERENCES `vehicle` (`vid`) ON DELETE CASCADE ON UPDATE RESTRICT
 )
++-----+-----+------+------------+
+| VID | CID | TID  | BDATE      |
++-----+-----+------+------------+
+|   1 | 101 | 1001 | 2025-01-04 |
+|   2 | 102 | 1002 | 2025-01-05 |
+|   3 | 103 | 1003 | 2025-01-05 |
+|   4 | 104 | 1004 | 2025-01-06 |
+|   4 | 201 | 2001 | 2025-02-01 |
+|   5 | 105 | 1005 | 2025-01-09 |
+|   6 | 106 | 1006 | 2025-01-11 |
+|   7 | 107 | 1007 | 2025-01-12 |
+|   8 | 108 | 1008 | 2025-01-15 |
+|  10 | 110 | 1010 | 2025-01-17 |
++-----+-----+------+------------+
 ```
 
 Constraints in driven_by table:  
@@ -74,6 +60,11 @@ CREATE TABLE `driven_by` (
   CONSTRAINT `cfk_tid2` FOREIGN KEY (`TID`) REFERENCES `trip` (`tid`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `cfk_vid2` FOREIGN KEY (`VID`) REFERENCES `vehicle` (`vid`) ON DELETE CASCADE ON UPDATE CASCADE
 )
++-----+-----+------+------------+
+| VID | EID | TID  | DDATE      |
++-----+-----+------+------------+
+|   4 |  24 | 2001 | 2025-02-01 |
++-----+-----+------+------------+
 ```
 
 No constraints in customer table:  
@@ -85,6 +76,21 @@ CREATE TABLE `customer` (
   `cphone` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`cid`)
 )
++-----+----------+----------+------------+
+| cid | cname    | caddress | cphone     |
++-----+----------+----------+------------+
+| 101 | raghav   | 123,abc  | 9908740851 |
+| 102 | Joey     | 213,bcd  | 9908740311 |
+| 103 | Chandler | 214,fgh  | 9928560321 |
+| 104 | Ross     | 215,klm  | 9441429424 |
+| 105 | Phoebe   | 314,dsa  | 9885645367 |
+| 106 | Rachel   | 516,abc  | 8498469900 |
+| 107 | Monica   | 517,dpk  | 1234567890 |
+| 108 | Emma     | 768,fgh  | 9988776655 |
+| 109 | Richard  | 897,bhv  | 6677889900 |
+| 110 | Geller   | 865,vfd  | 9394061050 |
+| 201 | Tavishi  | 123,Hyd  | 1234567890 |
++-----+----------+----------+------------+
 ```
 
 Constraints in employee table:  
@@ -99,6 +105,20 @@ CREATE TABLE `employee` (
   UNIQUE KEY `eid_UNIQUE` (`eid`),
   CONSTRAINT `du_che_con` CHECK (`ejdate` >= _utf8mb4 '1990-01-01')
 )
++-----+-----------+------------+-----------+------------+
+| eid | ename     | ephone     | eaddress  | eJdate     |
++-----+-----------+------------+-----------+------------+
+|  11 | Shannon   | 7555045129 | a234      | 2024-01-16 |
+|  15 | Dawn      | 8555801440 | a254      | 2024-05-18 |
+|  17 | Brittany  | 1555302988 | c254      | 2024-09-22 |
+|  24 | Brandon   | 7555673090 | m261      | 2024-02-02 |
+|  26 | Jack      | 9655554199 | m255      | 2024-03-04 |
+|  36 | Katherine | 9455599130 | 9253      | 2024-09-28 |
+|  37 | Kenneth   | 9455588277 | h567      | 2024-12-27 |
+|  45 | James     | 2029182132 | s890      | 2024-01-01 |
+|  82 | Mike      | 2029182136 | j123      | 2024-01-25 |
+|  98 | Tavishi   | 1234567890 | Bangalore | 2025-01-06 |
++-----+-----------+------------+-----------+------------+
 ```
 
 No contraints in login table:  
@@ -108,6 +128,11 @@ CREATE TABLE `login` (
   `password` varchar(45) NOT NULL,
   PRIMARY KEY (`password`, `username`)
 )
++----------+----------+
+| username | password |
++----------+----------+
+| admin    | admin    |
++----------+----------+
 ```
 
 Constraints in payment table:  
@@ -123,6 +148,11 @@ CREATE TABLE `payment` (
   CONSTRAINT `cfk_cid` FOREIGN KEY (`CID`) REFERENCES `customer` (`cid`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `cfk_tid` FOREIGN KEY (`TID`) REFERENCES `trip` (`tid`) ON DELETE CASCADE ON UPDATE CASCADE
 )
++------+-----+----------------+--------+------------+
+| TID  | CID | DISTANCETRAVEL | AMOUNT | PDATE      |
++------+-----+----------------+--------+------------+
+| 2001 | 201 | 245            |  220.5 | 2025-02-01 |
++------+-----+----------------+--------+------------+
 ```
 
 No constraints in places table:  
@@ -132,6 +162,7 @@ CREATE TABLE `places` (
   `city` varchar(45) NOT NULL,
   `distance` varchar(45) NOT NULL
 )
+Empty set
 ```
 
 Constraints in trip table:  
@@ -155,6 +186,20 @@ CREATE TABLE `trip` (
       and (`edate` <= _utf8mb4 '2026-12-31')
     )
   )
++------+--------+------+------------+------------+
+| tid  | source | dest | sdate      | edate      |
++------+--------+------+------------+------------+
+| 1001 | Hyd    | mum  | 2025-02-04 | 2025-02-07 |
+| 1002 | Blr    | koc  | 2025-02-05 | 2025-02-11 |
+| 1003 | koc    | mum  | 2025-02-05 | 2025-02-08 |
+| 1004 | hyd    | blr  | 2025-02-06 | 2025-02-10 |
+| 1005 | chn    | blr  | 2025-02-09 | 2025-02-14 |
+| 1006 | del    | chn  | 2025-02-11 | 2025-02-17 |
+| 1007 | mum    | chn  | 2025-02-12 | 2025-02-19 |
+| 1008 | koc    | del  | 2025-02-15 | 2025-02-19 |
+| 1010 | hyd    | kol  | 2025-02-17 | 2025-02-25 |
+| 2001 | Blr    | Ooty | 2025-02-01 | 2025-02-09 |
++------+--------+------+------------+------------+
 ```
 
 Constraints on vehicle table:  
@@ -167,6 +212,25 @@ CREATE TABLE `vehicle` (
   `regno` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`vid`)
 )
++-----+--------------+------+-------+-------+
+| vid | vname        | cap  | vtype | regno |
++-----+--------------+------+-------+-------+
+|   1 | mahindra-car | 4    | Car   | 211   |
+|   2 | hero-bike    | 2    | Bike  | 212   |
+|   3 | BMW-E-class  | 4    | Car   | 213   |
+|   4 | rangerover   | 6    | SUV   | 214   |
+|   5 | alto-car     | 4    | Car   | 215   |
+|   6 | swift-car    | 4    | Car   | 216   |
+|   7 | verna-car    | 4    | Car   | 217   |
+|   8 | wolkswagen   | 4    | Car   | 218   |
+|   9 | mahindra-bus | 15   | Bus   | 219   |
+|  10 | BMW-SUV      | 6    | SUV   | 220   |
+|  45 | Tiago        | 4    | Sedan | 789   |
+|  63 | Audi         | 3    | Car   | 876   |
+|  83 | Tata         | 4    | Car   | 432   |
+| 131 | Jaguar       | 5    | SUV   | 453   |
+| 139 | Indigo       | 3    | Car   | 123   |
++-----+--------------+------+-------+-------+
 ```
 
 
