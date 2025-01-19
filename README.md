@@ -1,12 +1,73 @@
 # Tourism-Management-System
 Tourism Agency Management System is a solution for travel agencies to maintain the details of vehicle, employee, trip and the people booking a trip, in an easier and convenient way.  
 
+## Setup Guide
+
+Welcome to the Tourism Management System! Follow the steps below to set up and run the project on your machine.
+
+### Prerequisites
+1. **Apache NetBeans**.
+
+2. **MySQL Command Line Client**
+   - Set a MySQL root password.
+
+3. **Required Libraries**
+   - `mysql-connector-j-x.x.x.jar`
+
+### Setup Steps
+
+#### 1. Configure MySQL Connection
+1. Replace the `password` placeholder in [Mysqlconnect.java](./src/TAMS/Mysqlconnect.java) with your MySQL root password:
+
+#### 2. Open the Project in NetBeans
+1. Launch Apache NetBeans.
+2. Open the project folder in NetBeans.
+3. Add the required libraries (`mysql-connector-j-x.x.x.jar`) to the project:
+   - Right-click on **Libraries** in the project explorer.
+   - Select **Add JAR/Folder** and navigate to the jar files for `mysql-connector-j-x.x.x.jar`.
+
+#### 3. Set Up the Database
+1. Open your MySQL command line client and log in using your credentials.
+2. Run the following commands to create and use the database:
+   ```sql
+   CREATE DATABASE testdb;
+   USE testdb;
+   SHOW TABLES; -- This should return an empty result
+   ```
+3. Import the database schema:
+   ```sql
+   SOURCE /path/to/Tourism-Management-System-master/Tourism-Management-System-master/tams.sql;
+   ```
+   Replace `/path/to` with the absolute path to the `tams.sql` file.
+4. Verify the tables were created:
+   ```sql
+   SHOW TABLES;
+   ```
+5. Populate the database with initial data:
+   - Open [insert_statements.txt](./insert_statements.txt) in a text editor.
+   - Copy all the content.
+   - Paste it into the MySQL command line client.
+
+#### 4. Run the Project
+1. In NetBeans, click the **Run** button to start the application.
+2. Log in using the default credentials:
+   - **Username:** `admin`
+   - **Password:** `admin`
+
+#### 5. Exiting the Application
+- To exit a screen, click on the top bar of the application window.
+
+### Demo Video
+For a walkthrough of the setup and usage, watch the attached demo video.
+
 [Tourism Management Demo Video](./Tourism%20Management.mp4)
+
 ### Necessity of the project 
 Tourism Agency Management System would play a vital role in planning a perfect trip for people going on vacations.
 The main purpose is to help tourism companies manage their customers and trips.  
 It provides an user interface for the administrator for managing the data present in the travel agency and reduces the time of recording the data.
-### Techstacks Used
+
+### Techstack Used
 1. Netbeans  
 2. MySQL  
 3. Java
