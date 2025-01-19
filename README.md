@@ -44,34 +44,148 @@ It provides an user interface for the administrator for managing the data presen
 ![image](https://user-images.githubusercontent.com/75008683/177981921-23d1fefc-b85b-4fca-a9c8-a54c64bcc17d.png)
 
 ## CREATING CONSTRAINTS:
-Constraints in Booked_for table:  
-![image](https://user-images.githubusercontent.com/75008683/177982069-c8b74dd6-32b5-46fa-9d96-c0ef34cb0d77.png)
-
-
+Constraints in booked_for table:  
+```
+CREATE TABLE `booked_for` (
+  `VID` int(11) NOT NULL,
+  `CID` int(11) NOT NULL,
+  `TID` int(11) NOT NULL,
+  `BDATE` date DEFAULT NULL,
+  PRIMARY KEY (`VID`, `CID`, `TID`),
+  KEY `cfk_tid1_idx` (`TID`),
+  KEY `cfk_cid1_idx` (`CID`),
+  CONSTRAINT `cfk_cid1` FOREIGN KEY (`CID`) REFERENCES `customer` (`cid`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `cfk_tid1` FOREIGN KEY (`TID`) REFERENCES `trip` (`tid`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `cfk_vid1` FOREIGN KEY (`VID`) REFERENCES `vehicle` (`vid`) ON DELETE CASCADE ON UPDATE RESTRICT
+)
+```
 
 Constraints in driven_by table:  
-![image](https://user-images.githubusercontent.com/75008683/177982108-c4356370-3891-495c-af25-481cb6c0cc70.png)
+```
+CREATE TABLE `driven_by` (
+  `VID` int(11) NOT NULL,
+  `EID` int(11) NOT NULL,
+  `TID` int(11) NOT NULL,
+  `DDATE` date DEFAULT NULL,
+  PRIMARY KEY (`VID`, `EID`, `TID`),
+  KEY `cfk_eid1_idx` (`EID`),
+  KEY `cfk_tid2_idx` (`TID`),
+  CONSTRAINT `cfk_eid1` FOREIGN KEY (`EID`) REFERENCES `employee` (`eid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `cfk_tid2` FOREIGN KEY (`TID`) REFERENCES `trip` (`tid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `cfk_vid2` FOREIGN KEY (`VID`) REFERENCES `vehicle` (`vid`) ON DELETE CASCADE ON UPDATE CASCADE
+)
+```
 
-
+No constraints in customer table:  
+```
+CREATE TABLE `customer` (
+  `cid` int(11) NOT NULL,
+  `cname` varchar(45) DEFAULT NULL,
+  `caddress` varchar(45) DEFAULT NULL,
+  `cphone` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`cid`)
+)
+```
 
 Constraints in employee table:  
-![image](https://user-images.githubusercontent.com/75008683/177982163-98a2e5d9-ab1f-49de-a6fa-04ecf6ea5434.png)
+```
+CREATE TABLE `employee` (
+  `eid` int(11) NOT NULL AUTO_INCREMENT,
+  `ename` varchar(45) NOT NULL,
+  `ephone` varchar(20) NOT NULL,
+  `eaddress` varchar(45) DEFAULT NULL,
+  `eJdate` date NOT NULL,
+  PRIMARY KEY (`eid`),
+  UNIQUE KEY `eid_UNIQUE` (`eid`),
+  CONSTRAINT `du_che_con` CHECK (`ejdate` >= _utf8mb4 '1990-01-01')
+)
+```
 
-
+No contraints in login table:  
+```
+CREATE TABLE `login` (
+  `username` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  PRIMARY KEY (`password`, `username`)
+)
+```
 
 Constraints in payment table:  
-![image](https://user-images.githubusercontent.com/75008683/177982186-28d4ade7-c78e-4d25-90b0-7c87a9f66b46.png)
+```
+CREATE TABLE `payment` (
+  `TID` int(11) NOT NULL,
+  `CID` int(11) NOT NULL,
+  `DISTANCETRAVEL` varchar(45) DEFAULT NULL,
+  `AMOUNT` varchar(45) DEFAULT NULL,
+  `PDATE` date DEFAULT NULL,
+  PRIMARY KEY (`TID`, `CID`),
+  KEY `cfk_cid_idx` (`CID`),
+  CONSTRAINT `cfk_cid` FOREIGN KEY (`CID`) REFERENCES `customer` (`cid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `cfk_tid` FOREIGN KEY (`TID`) REFERENCES `trip` (`tid`) ON DELETE CASCADE ON UPDATE CASCADE
+)
+```
 
+No constraints in places table:  
+```
+CREATE TABLE `places` (
+  `idplaces` int(11) NOT NULL,
+  `city` varchar(45) NOT NULL,
+  `distance` varchar(45) NOT NULL
+)
+```
 
 Constraints in trip table:  
-![image](https://user-images.githubusercontent.com/75008683/177982206-ad495b34-fb08-497b-b4ef-0ff7d11c8394.png)
+```
+CREATE TABLE `trip` (
+  `tid` int(11) NOT NULL,
+  `source` varchar(45) DEFAULT NULL,
+  `dest` varchar(45) DEFAULT NULL,
+  `sdate` date DEFAULT NULL,
+  `edate` date DEFAULT NULL,
+  PRIMARY KEY (`tid`),
+  CONSTRAINT `dateconstraint` CHECK (
+    (
+      (`sdate` >= sysdate())
+      and (`sdate` <= _utf8mb4 '2025-12-30')
+    )
+  ),
+  CONSTRAINT `dateconstraintsdb` CHECK (
+    (
+      (`edate` >= `sdate`)
+      and (`edate` <= _utf8mb4 '2026-12-31')
+    )
+  )
+```
 
-
-Capacity constraint on vehicle table:  
-![image](https://user-images.githubusercontent.com/75008683/177982222-d8c14643-1996-40e4-a9c5-ff6ae50be811.png)
+Constraints on vehicle table:  
+```
+CREATE TABLE `vehicle` (
+  `vid` int(11) NOT NULL AUTO_INCREMENT,
+  `vname` varchar(50) DEFAULT NULL,
+  `cap` varchar(11) DEFAULT NULL,
+  `vtype` varchar(50) DEFAULT NULL,
+  `regno` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`vid`)
+)
+```
 
 
 ## FRONT-END GUI:
+![image](https://github.com/user-attachments/assets/837fa2c8-ab9b-4c02-99eb-6fb7ef87d09b)
+![image](https://github.com/user-attachments/assets/4c11775b-f280-4ed0-8b29-c72aac1ede96)
+![image](https://github.com/user-attachments/assets/e99e8c76-df04-4cd3-abdd-c6101adad317)
+![image](https://github.com/user-attachments/assets/2eae1054-43f5-457e-9cd5-3ce0f5df5cda)
+![image](https://github.com/user-attachments/assets/47907c21-edd1-4b29-9daf-4db796daaadb)
+![image](https://github.com/user-attachments/assets/b56aa0d3-3e1a-4c0c-98e2-44c43c01e92d)
+![image](https://github.com/user-attachments/assets/75cd5287-d69a-440d-9462-70888b0321ec)
+![image](https://github.com/user-attachments/assets/969874e4-bf2f-41a2-9a8f-773c78c6f054)
+![image](https://github.com/user-attachments/assets/93da9e5e-d838-4cbd-a69a-674c27f1c069)
+
+
+
+
+
+
 
 
 
