@@ -9,11 +9,13 @@ It provides an user interface for the administrator for managing the data presen
 ### Techstacks Used
 1. Netbeans  
 2. MySQL  
-3. Java  
-## ER Diagram
-![image](https://user-images.githubusercontent.com/75008683/177980506-da644d8a-ada3-4ae6-a35f-ea2a340b828d.png)
+3. Java
+   
+## ER Diagram  
+<img src="./TAMS-images/ER_Diagram.png" alt="Example Image" width="400">
+
 ## Relational Schema
-![image](https://user-images.githubusercontent.com/75008683/177980603-60c6845a-802c-4f3c-b487-bc85354f6a55.png)
+<img src="./TAMS-images/Relational_Schema.png" alt="Example Image" width="400">
 
 ## CREATING TABLE QUERIES & CONSTRAINTS:
 Constraints in booked_for table:  
