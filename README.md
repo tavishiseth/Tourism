@@ -72,34 +72,6 @@ Capacity constraint on vehicle table:
 
 
 ## FRONT-END GUI:
-![image](https://user-images.githubusercontent.com/75008683/177982313-343d9df3-eb70-4747-bf90-af462f8cf079.png)
-![image](https://user-images.githubusercontent.com/75008683/177982464-7e24a632-47ec-4c53-ad30-821c80560c45.png)
-![image](https://user-images.githubusercontent.com/75008683/177982499-9c024080-8417-4857-a94c-390d5e0435aa.png)
-![image](https://user-images.githubusercontent.com/75008683/177982515-e7482f83-e7ad-4dba-962f-13a6cd09d668.png)
-![image](https://user-images.githubusercontent.com/75008683/177982546-eeca36a1-3c2a-4ba9-a4b7-9bce9943a5a1.png)
-![image](https://user-images.githubusercontent.com/75008683/177982568-d96fed3b-89a6-4462-b316-11b9474c16d6.png)
-![image](https://user-images.githubusercontent.com/75008683/177982599-808af027-b0ae-42ec-9432-a99f8c6b6d3a.png)
-
-Driven_by table   
-![image](https://user-images.githubusercontent.com/75008683/177982636-b73d6c56-41c0-458c-9961-6957192e4bb8.png)
-
-Employee table  
-![image](https://user-images.githubusercontent.com/75008683/177982650-ddd2c741-19f7-42a4-8d08-7af3a76ba3cd.png)
-
-Payment table  
-![image](https://user-images.githubusercontent.com/75008683/177982666-df937414-5d3b-4334-aeaf-9ea5f43eea18.png)
-
-Trip table  
-![image](https://user-images.githubusercontent.com/75008683/177982683-da8ea7ac-2cd3-40cc-abf5-61d9731765a4.png)
-
-Booked_for Table    
-![image](https://user-images.githubusercontent.com/75008683/177982709-f2ce93ff-c212-493e-990e-b7f10ef63fbf.png)
-
-Customer table  
-![image](https://user-images.githubusercontent.com/75008683/177982776-40e5db4c-9fd8-4918-83c7-00569650f6e0.png)
-
-Vehicle Table  
-![image](https://user-images.githubusercontent.com/75008683/177982805-fa5a7e8b-4118-43eb-8cd3-d04b11750e62.png)
 
 
 
